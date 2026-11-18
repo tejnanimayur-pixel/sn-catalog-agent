@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sn-catalog-agent"
+version = "0.2.0"
+description = "Builds ServiceNow catalog items from ADO stories: CLI agent (Claude API) + MCP server (CodeMie, Claude Desktop, ...)"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31", "python-dotenv>=1.0", "mcp>=1.10", "anthropic>=0.40"]
+
+[project.scripts]
+sn-catalog-mcp = "agent.mcp_server:main"
+sn-catalog-agent = "agent.main:main"
+
+[tool.setuptools]
+packages = ["agent"]
